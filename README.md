@@ -24,9 +24,13 @@
 #### Setting up
 1) Install Python 3.8
 2) Clone the repo
-'''git clone https://github.com/aleks-iv/2018-Data-Science-Bowl-test-task'''
+'''console
+git clone https://github.com/aleks-iv/2018-Data-Science-Bowl-test-task
+'''
 3) Install the necessary required packages from requirements.txt
-'''pip install -r requirements.txt'''
+'''console
+pip install -r requirements.txt
+'''
 #### Running
 * All necessary data for training and testing are already in repo. (Optionally it's possible to obtain this data by downloading to the root directory of project original data from Kaggle (directories stage1_train and stage1_test) and run the script data_preparation.py).
 * Augmented images are already in repo too. (Optionally it's possible to obtain augmented data from original by running script augmentation.py).

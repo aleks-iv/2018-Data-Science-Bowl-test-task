@@ -27,7 +27,7 @@ VALID_PREDICT = os.path.join(VALID_DATA, 'predicted')
 
 TEST_DATA = os.path.join(DATA, 'test')
 TEST_IMAGES = os.path.join(TEST_DATA, 'images')
-TEST_PREDICT = os.path.join(VALID_DATA, 'predicted')
+TEST_PREDICT = os.path.join(TEST_DATA, 'predicted')
 
 directories = [DATA,
                TRAIN_DATA,

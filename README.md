@@ -20,19 +20,24 @@
 * Batch size is 16.
 * Dropout and batch normalization were not used, since they did not show a significant improvement in convergence, but they greatly slowed down the learning process.
 * During training, control was made on automatically  generated validation set (10% of train + augmented data).
+#### Results
+* Mean Dice score on each image from train dataset is 0.89.
+* Mean Dice score on each image from validation dataset is 0.88.
+* There is one image (which randomly fell into the training set) for which the Dice score is low (zero). Looking at this image, one can assume that it has mistaken markup:
+![](mistaken_image.png)
 ## Setup development environment
 #### Setting up
-1) Install Python 3.8
-2) Clone the repo
+1) Install Python 3.8.
+2) Clone the repo.
 ```console
 git clone https://github.com/aleks-iv/2018-Data-Science-Bowl-test-task
 ```
-3) Install the necessary required packages from requirements.txt
+3) Install the necessary required packages from requirements.txt.
 ```console
 pip install -r requirements.txt
 ```
 #### Running
 * All necessary data for training and testing are already in repo. (Optionally it's possible to obtain this data by downloading to the root directory of project original data from Kaggle (directories stage1_train and stage1_test) and run the script data_preparation.py).
-* Augmented images are already in repo too. (Optionally it's possible to obtain augmented data from original by running script augmentation.py).
+* Augmented images are already in repo too. (Optionally it's possible to obtain augmented data from original by running script augmentation.py. This script needs list of images per each cluster obtained during EDA. It can be automatically generated and saved as .csv files in ../data/train/ by running EDA notebook).
 * For training the model you need to run script Train.py.
-* For testing the model you need to run script Predict_masks.py (You can find saved predicted masks in ..\data\test\predicted).
+* For testing the model you need to run script Predict_masks.py (You can find saved predicted masks in ../data/test/predicted).

@@ -16,25 +16,31 @@ ORIGINAL_TEST_DATA = os.path.join(cwd, 'stage1_test')
 DATA = os.path.join(cwd, 'data')
 
 TRAIN_DATA = os.path.join(DATA, 'train')
-TRAIN_DATA_IMAGES = os.path.join(TRAIN_DATA, 'images')
-TRAIN_DATA_MASKS = os.path.join(TRAIN_DATA, 'masks')
+TRAIN_IMAGES = os.path.join(TRAIN_DATA, 'images')
+TRAIN_MASKS = os.path.join(TRAIN_DATA, 'masks')
+TRAIN_PREDICT = os.path.join(TRAIN_DATA, 'predicted')
 
 VALID_DATA = os.path.join(DATA, 'validation')
-VALID_DATA_IMAGES = os.path.join(VALID_DATA, 'images')
-VALID_DATA_MASKS = os.path.join(VALID_DATA, 'masks')
+VALID_IMAGES = os.path.join(VALID_DATA, 'images')
+VALID_MASKS = os.path.join(VALID_DATA, 'masks')
+VALID_PREDICT = os.path.join(VALID_DATA, 'predicted')
 
 TEST_DATA = os.path.join(DATA, 'test')
-TEST_DATA_IMAGES = os.path.join(TEST_DATA, 'images')
+TEST_IMAGES = os.path.join(TEST_DATA, 'images')
+TEST_PREDICT = os.path.join(VALID_DATA, 'predicted')
 
 directories = [DATA,
                TRAIN_DATA,
-               TRAIN_DATA_IMAGES,
-               TRAIN_DATA_MASKS,
+               TRAIN_IMAGES,
+               TRAIN_MASKS,
+               TRAIN_PREDICT,
                VALID_DATA,
-               VALID_DATA_IMAGES,
-               VALID_DATA_MASKS,
+               VALID_IMAGES,
+               VALID_MASKS,
+               VALID_PREDICT,
                TEST_DATA,
-               TEST_DATA_IMAGES]
+               TEST_IMAGES,
+               TEST_PREDICT]
 
 for path in directories:
     try:
@@ -81,12 +87,12 @@ img_test_names = os.listdir(ORIGINAL_TEST_DATA)
 img_train_names, img_valid_names = train_test_split(img_names, test_size=0.1)
 
 print('Train data single mask creation and relocation')
-img_placement(img_train_names, ORIGINAL_DATA, TRAIN_DATA_IMAGES)
-single_masks_placement(img_train_names, ORIGINAL_DATA, TRAIN_DATA_MASKS)
+img_placement(img_train_names, ORIGINAL_DATA, TRAIN_IMAGES)
+single_masks_placement(img_train_names, ORIGINAL_DATA, TRAIN_MASKS)
 
 print('Validation data single mask creation and relocation')
-img_placement(img_valid_names, ORIGINAL_DATA, VALID_DATA_IMAGES)
-single_masks_placement(img_valid_names, ORIGINAL_DATA, VALID_DATA_MASKS)
+img_placement(img_valid_names, ORIGINAL_DATA, VALID_IMAGES)
+single_masks_placement(img_valid_names, ORIGINAL_DATA, VALID_MASKS)
 
 print('Test data relocation')
-img_placement(img_test_names, ORIGINAL_TEST_DATA, TEST_DATA_IMAGES)
+img_placement(img_test_names, ORIGINAL_TEST_DATA, TEST_IMAGES)

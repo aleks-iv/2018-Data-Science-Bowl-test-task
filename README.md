@@ -6,7 +6,7 @@
 1) PCA of the original images in the HSV color space has been carried out.
 2) Two main components were visualized. The resulting scatter plot showed four clusters.
 3) The KMeans clustering method was applied to the PCA results, the results of which coincided with the visual guess - there are four clusters in the data.
-4) The division of images into clusters is uneven: white-on-black images prevail (), black-on-white images are least of all ().
+4) The division of images into clusters is uneven: white-on-black images prevail (81.5%), black-on-white images are least of all (2.18%).
 5) The training, validation, and test sets do not differ much from each other in the percentage of images of each of the identified clusters.
 #### Data augmentation
 1) To prevent overfitting, offline image augmentation was performed (rotations 90 degrees, horizontal and vertical shift, zoom, flipping).

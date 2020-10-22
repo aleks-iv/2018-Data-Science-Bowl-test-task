@@ -5,6 +5,9 @@ import numpy as np
 
 from tqdm import tqdm
 
+IMG_H = 128
+IMG_W = 128
+
 
 def load_data(img_dir_path, msk_dir_path=None, names=None):
     sys.stdout.flush()
@@ -15,13 +18,13 @@ def load_data(img_dir_path, msk_dir_path=None, names=None):
 
     n = len(list_of_names)
 
-    X_train = np.zeros((n, 128, 128, 3))
+    X_train = np.zeros((n, IMG_H, IMG_W, 3))
     if msk_dir_path is not None:
-        Y_train = np.zeros((n, 128, 128))
+        Y_train = np.zeros((n, IMG_H, IMG_W))
 
     for i, img_name in tqdm(enumerate(list_of_names), total=n):
         img = cv2.imread(os.path.join(img_dir_path, img_name))
-        img_rs = cv2.resize(img, (128, 128))
+        img_rs = cv2.resize(img, (IMG_H, IMG_W))
         X_train[i] = img_rs / 255
         if msk_dir_path is not None:
             img = cv2.imread(os.path.join(msk_dir_path, img_name), 0)
